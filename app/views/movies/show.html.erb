@@ -30,12 +30,14 @@
               </tr>
             </tbody>
           </table>
-          <%= link_to "Write a Review", new_movie_review_path(@movie) %>
+
+          <%= link_to 'Edit', edit_movie_path(@movie) %> |
+          <%= link_to 'Back', movies_path %>    
         </div>
       </div>
       <div class="col-md-7 col-md-offset-1">
-        <h1 class="review_title"><%= @movie.title %></h1>
-        <p><%= @movie.description %></p>
+        <h2 class="review_title">Title : <%= @movie.title %></h2>
+        <h3>Description : <%= @movie.description %></h3>
 
         <% if @reviews.blank? %>
           <h3>No reviews just yet, would you like to add the first!</h3>
@@ -51,7 +53,8 @@
       </div>
     </div>
   </div>
+          <%= link_to "Write a Review", new_movie_review_path(@movie) %>
+
 </div>
 
-<%= link_to 'Edit', edit_movie_path(@movie) %> |
-<%= link_to 'Back', movies_path %>
+
